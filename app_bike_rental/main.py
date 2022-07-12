@@ -1,5 +1,5 @@
-from test_applications.oop.app_bike_rental.people import Person
-from test_applications.oop.app_bike_rental.rental_station import Rental_Station
+from app_bike_rental.people import Person
+from app_bike_rental.rental_station import Rental_Station
 
 
 def main():
@@ -24,7 +24,7 @@ def main():
     print(ross.bikeid)
     print(ben.rentedbikes)
     print(ben.bikeid)
-    # rental_station.rent_bike(ben,{"Regular": [[]], "Child": [[ben]], "Tandem": []})
+    
 
     print("tandem renters")
     greg = Person("Greg", "gg", 19)
