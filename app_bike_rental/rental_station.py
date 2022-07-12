@@ -1,17 +1,7 @@
-"""
-inventory
-payments/costs
-    - how much each bike costs
-    - people need to pay
-when people rent out the bikes, keep track of who has what bike
-when people return the bike
-keep track of time -- notify people when their time is almost up
-no cool down period, but people cannot extend their bike time (need to bring it back, and resign it out)
 
-"""
 from collections import defaultdict
 
-from test_applications.oop.app_bike_rental.bikes import Regular, Child, Tandem
+from app_bike_rental.bikes import Regular, Child, Tandem
 
 class AdultException(Exception):
     pass
@@ -34,7 +24,6 @@ class Rental_Station:
 
 
     def rent_bike(self, renter, want_to_rent):
-        #want_to_rent = {type: [[rider1], [rider2], rider3], tandem: [[person1, person2], [],}
         for key in want_to_rent:
             if key not in self.rentedinventory:
                 print("Sorry that is not an acceptable bike type")
@@ -89,7 +78,6 @@ class Rental_Station:
         rider[0].get_bike(bike.id)
         rider[1].get_bike(bike.id)
         self.rentedbikes[renter.id]["Tandem"].append(rider[0].bikeid)
-        # self.rentedbikes[renter.id]["Tandem"].append(rider[1].bikeid)
         renter.make_payment(cost, bike.id)
 
 
